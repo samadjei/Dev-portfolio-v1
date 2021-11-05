@@ -1,0 +1,197 @@
+@use '../abstracts/' as *;
+
+.header {
+	padding-top: 6rem;
+	padding-bottom: 5rem;
+	@include breakpoint(phone) {
+		padding-top: 4rem;
+	}
+}
+
+.profile {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	&__photo {
+		border-radius: 50%;
+		width: 30%;
+		@include breakpoint(tablet) {
+			width: 40%;
+		}
+		@include breakpoint(phone) {
+			width: 50%;
+		}
+	}
+
+	&--name {
+		font-size: 6rem;
+		@include breakpoint(phone) {
+			font-size: 5rem;
+		}
+	}
+
+	&--description {
+		width: 60rem;
+		padding: 1.5rem 0;
+		@include breakpoint(phone) {
+			width: 100%;
+		}
+	}
+
+	&__links {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+
+		&-items {
+			width: 3rem;
+			cursor: pointer;
+		}
+	}
+}
+
+// Projects
+.projects {
+	&__inner {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+		justify-content: center;
+		align-items: center;
+		gap: 3rem;
+	}
+
+	&__cards {
+		background: var(--secondary-bg);
+		border-radius: 1.5rem;
+		&-image {
+			cursor: pointer;
+			width: 100%;
+		}
+	}
+
+	&__content {
+		padding: 2rem;
+		&-upper {
+			display: flex;
+			align-items: center;
+			gap: 3rem;
+		}
+	}
+
+	&__github {
+		cursor: pointer;
+	}
+
+	&--title {
+		color: var(--button-text);
+	}
+
+	&--text {
+		color: var(--button-text);
+	}
+
+	// Tools
+	&__tools {
+		padding-top: 2rem;
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		&-items {
+			background: var(--button);
+			width: 9rem;
+			height: 3rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+
+		&-text {
+			color: var(--button-text);
+		}
+	}
+}
+
+.subhead {
+	font-size: 5.25rem;
+	opacity: 0.5;
+}
+
+// ABOUT
+.about {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include breakpoint(tablet) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+
+	&__content {
+		width: 60rem;
+		@include breakpoint(tablet) {
+			padding-bottom: 2rem;
+		}
+		@include breakpoint(phone) {
+			width: 100%;
+		}
+	}
+}
+
+.subhead {
+	@include breakpoint(tablet) {
+		text-align: center;
+	}
+}
+
+.tools {
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 3rem;
+	}
+
+	&__inner {
+		width: 30rem;
+		@include breakpoint(tablet) {
+			width: 100%;
+		}
+	}
+
+	&--title {
+		font-size: 2.5rem;
+		padding-bottom: 3rem;
+		@include breakpoint(tablet) {
+			text-align: center;
+		}
+	}
+
+	&--items {
+		color: var(--paragraph);
+	}
+}
+
+// CONTACT
+.contact {
+	padding-top: 5rem;
+
+	@include breakpoint(tablet) {
+		text-align: center;
+	}
+
+	&--question {
+		padding: 1.25rem 0;
+	}
+
+	&--link {
+		color: var(--button);
+	}
+}

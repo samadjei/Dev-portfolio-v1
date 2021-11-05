@@ -1,0 +1,58 @@
+@use '../abstracts' as *;
+
+.nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	padding: 2rem 0;
+
+	&__links {
+		display: flex;
+		gap: 4rem;
+
+		@include breakpoint(phone) {
+			position: absolute;
+			right: 0rem;
+			height: 92vh;
+			top: 8vh;
+			background: var(--secondary-bg);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			transform: translateX(100%);
+			transition: transform 0.5s ease-in;
+			padding-top: 5rem;
+			gap: 10rem;
+		}
+	}
+
+	&--items {
+		color: var(--paragraph);
+		text-transform: uppercase;
+		@include breakpoint(phone) {
+			font-size: 2.5rem;
+			color: var(--button-text);
+		}
+	}
+
+	&__active {
+		transform: translateX(0%);
+	}
+}
+
+.burger {
+	display: none;
+	cursor: pointer;
+	@include breakpoint(phone) {
+		display: block;
+	}
+
+	.lines {
+		width: 2.5rem;
+		height: 0.3rem;
+		background: var(--secondary-bg);
+		margin: 0.5rem;
+	}
+}
